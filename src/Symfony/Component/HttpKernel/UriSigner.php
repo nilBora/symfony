@@ -101,7 +101,7 @@ class UriSigner
         $pass = isset($url['pass']) ? ':'.$url['pass'] : '';
         $pass = ($user || $pass) ? "$pass@" : '';
         $path = $url['path'] ?? '';
-        $query = isset($url['query']) && $url['query'] ? '?'.$url['query'] : '';
+        $query = $url['query'] ? '?'.$url['query'] : '';
         $fragment = isset($url['fragment']) ? '#'.$url['fragment'] : '';
 
         return $scheme.$user.$pass.$host.$port.$path.$query.$fragment;
